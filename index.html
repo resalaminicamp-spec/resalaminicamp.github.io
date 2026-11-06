@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ميني كامب رسالة</title>
-<meta name="description" content="تواصل معانا من خلال صفحاتنا على فيسبوك وإنستجرام وتيك توك.">
+<meta name="description" content="تواصل معانا من خلال صفحاتنا على فيسبوك وإنستجرام وتيك توك، وانضم لفريق ميني كامب رسالة.">
 <meta property="og:title" content="ميني كامب رسالة">
 <meta property="og:image" content="hero-run.png">
 <link rel="preload" as="image" href="hero-run.png">
@@ -15,10 +15,6 @@
   :root{
     --red:#d6102b; --blue:#0b4fb3; --navy:#0a1f4d; --yellow:#ffc21a; --bg:#ffffff; --ink:#0a1f4d;
   }
-  @media (prefers-color-scheme: dark){
-    /* images have white backgrounds, so keep the stage white and darken only the page frame */
-    :root{ --frame:#0a1f4d; --frame-ink:#fff; }
-  }
   :root{ --frame:#eef3fb; --frame-ink:var(--ink); }
   @media (prefers-color-scheme: dark){ :root{ --frame:#0a1f4d; --frame-ink:#fff; } }
 
@@ -28,8 +24,6 @@
     margin:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px;
     padding:24px 16px; background:var(--frame); color:var(--frame-ink);
     font-family:"Cairo", "Segoe UI", Tahoma, Arial, sans-serif; font-weight:800;
-    background-image:
-      linear-gradient(var(--frame) 0 0);
   }
 
   .stage{
@@ -58,6 +52,18 @@
   h1 span{color:var(--red)}
   p.tag{font-size:clamp(20px,3.6vw,28px); line-height:1.6; margin:0; text-align:center; max-width:30ch}
 
+  /* Join-the-team call to action */
+  .join{
+    display:inline-flex; align-items:center; gap:12px; padding:18px 32px; text-decoration:none;
+    font-size:clamp(22px,4vw,30px); color:var(--navy); background:var(--yellow);
+    border:5px solid var(--navy); box-shadow:8px 8px 0 var(--navy);
+    transition:transform .08s steps(2), box-shadow .08s steps(2);
+  }
+  .join:hover,.join:focus-visible{transform:translate(-3px,-3px); box-shadow:11px 11px 0 var(--navy); outline:none}
+  .join:focus-visible{border-color:var(--red)}
+  .join:active{transform:translate(8px,8px); box-shadow:0 0 0 var(--navy)}
+  .join svg{width:26px;height:26px;fill:currentColor;flex:none}
+
   .social{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; padding:0; margin:0; list-style:none}
   .social a{
     display:flex; align-items:center; gap:10px; padding:14px 18px; text-decoration:none;
@@ -76,6 +82,7 @@
   @media (prefers-reduced-motion: reduce){
     .stage img{transition:none}
     .stage.bob img.on,.stage.hop img.on{animation:none}
+    .join,.social a{transition:none}
   }
 </style>
 </head>
@@ -89,13 +96,17 @@
 <h1>ميني كامب <span>رسالة</span></h1>
 <p class="tag">تواصل معانا من خلال صفحاتنا!</p>
 
-<!-- TODO: replace YOUR_PAGE in the three links with your real pages -->
+<a class="join" href="https://minicamp.majantec.com/#apply" target="_blank" rel="noopener" aria-label="انضم لفريق ميني كامب رسالة">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-3.300 0-7 1.700-7 4v3h14v-3c0-2.300-3.700-4-7-4zm9-3V7h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg>
+  انضم لفريقنا
+</a>
+
 <ul class="social">
   <li><a class="fb" href="https://www.facebook.com/minicampresala" target="_blank" rel="noopener" aria-label="ميني كامب رسالة على فيسبوك">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H7v4h3v8h4v-8h3l1-4h-4V8z"/></svg>فيسبوك</a></li>
   <li><a class="ig" href="https://www.instagram.com/minicampresala" target="_blank" rel="noopener" aria-label="ميني كامب رسالة على إنستجرام">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM17.5 6a1.2 1.2 0 1 1 0 2.400 1.200 1.200 0 0 1 0-2.400z"/></svg>إنستجرام</a></li>
-  <li><a class="tt" href="https://www.tiktok.com/@minicamp.resala?" target="_blank" rel="noopener" aria-label="ميني كامب رسالة على تيك توك">
+  <li><a class="tt" href="https://www.tiktok.com/@minicamp.resala" target="_blank" rel="noopener" aria-label="ميني كامب رسالة على تيك توك">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3c.3 2.400 1.800 4 4 4.200v3.200c-1.500 0-2.900-.5-4-1.300V15a6 6 0 1 1-6-6c.3 0 .7 0 1 .1v3.300a2.800 2.800 0 1 0 1.800 2.600V3H16z"/></svg>تيك توك</a></li>
 </ul>
 
